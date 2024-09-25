@@ -5,7 +5,7 @@ const App = () => {
   const [data, setData] = useState();
   useEffect(() => {
     const dataFetcher = () => {
-      let data = fetch(" https://dummyjson.com/productss")
+      let data = fetch(" https://dummyjson.com/products")
         .then((res) => {
           if (!res.ok) throw Error();
           return res.json();
