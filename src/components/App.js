@@ -5,17 +5,16 @@ const App = () => {
   const [data, setData] = useState();
   useEffect(() => {
     const dataFetcher = () => {
-      let data = fetch(" https://dummyjson.com/products")
-        .then((data) => data.json())
+      let data = fetch(" https://dummyjson.com/productss")
+        .then((res) => {
+          if (!res.ok) throw Error();
+          return res.json();
+        })
         .then((json) => {
           // console.log(json);
           setData(json);
         })
-        .catch((error) =>
-          console.error(
-            "An error occurred: ' within the element: [ <div#root>, 1 more... ]"
-          )
-        );
+        .catch((err) => console.error("An error occurred: ", err));
     };
     dataFetcher();
   }, []);
