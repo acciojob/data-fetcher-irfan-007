@@ -8,9 +8,10 @@ const App = () => {
       let data = fetch(" https://dummyjson.com/products")
         .then((data) => data.json())
         .then((json) => {
+          console.log(json);
           setData(json);
         })
-        .catch((error) => console.error(error));
+        .catch((error) => console.error("An error occurred: ", error));
     };
     dataFetcher();
   }, []);
