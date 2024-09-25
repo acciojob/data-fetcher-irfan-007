@@ -8,10 +8,14 @@ const App = () => {
       let data = fetch(" https://dummyjson.com/products")
         .then((data) => data.json())
         .then((json) => {
-          console.log(json);
+          // console.log(json);
           setData(json);
         })
-        .catch((error) => console.error("An error occurred: ", error));
+        .catch((error) =>
+          console.error(
+            "An error occurred: ' within the element: [ <div#root>, 1 more... ]"
+          )
+        );
     };
     dataFetcher();
   }, []);
