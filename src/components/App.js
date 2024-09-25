@@ -10,13 +10,13 @@ const App = () => {
         .then((json) => {
           setData(json);
         })
-        .catch((error) => console.error("api err", error));
+        .catch((error) => console.error(error));
     };
     dataFetcher();
   }, []);
   return (
     <div id="main">
-      <h1>Data Fetched From API</h1>
+      <h1>Data Fetched from API</h1>
       <pre>{data ? JSON.stringify(data, undefined, 4) : "Loading..."}</pre>
     </div>
   );
