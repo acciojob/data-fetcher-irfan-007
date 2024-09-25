@@ -18,7 +18,7 @@ const App = () => {
   return (
     <div id="main">
       <h1>Data Fetched from API</h1>
-      <pre>{data ? JSON.stringify(data, undefined, 4) : "Loading..."}</pre>
+      <pre>{data ? JSON.stringify(data, undefined, 2) : "Loading..."}</pre>
     </div>
   );
 };
